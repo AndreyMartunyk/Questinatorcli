@@ -8,6 +8,7 @@
       />
       <QuestionList 
       v-bind:questions="questions" 
+      v-bind:users="users"
        />
     </div>
 
@@ -133,7 +134,7 @@ export default {
   margin-right: auto;
   width: 700px;
 
-  background-color: rgb(166, 219, 150);
+
 }
 .home-container {
   display: flex;

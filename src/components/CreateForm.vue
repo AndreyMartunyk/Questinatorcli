@@ -1,5 +1,5 @@
 <template>
-  <div class="createF">
+  <div class="createF card">
     <textarea placeholder="enter the question" v-model="questionMessage"></textarea>
     <div class="create-form-options">
       <div class="quest">
@@ -79,8 +79,8 @@ export default {
       let question = {
         UserOwnerId: 1,
         QuestionMessage: this.questionMessage,
-        CreateDate: "",
-        AnswerDeadline: this.answerDeadline,
+        CreateDate: new Date(Date.now()).toISOString(),
+        AnswerDeadline: new Date(Date.now()).toISOString(), //hardcode!! Need to change!(this.answerDeadline)
         MaxCustomQuestions: this.getCountOfCustomAnswers,
         MaxAnswers: this.maxAnswers,
         IsSaved: isSaved,
@@ -98,9 +98,15 @@ export default {
 };
 </script>
 
-<style>
-.createF {
-  background-color: rgb(132, 182, 131);
+<style >
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 15px;
+  margin-top: 15px;;
 }
 .createF textarea {
   width: 400px;
